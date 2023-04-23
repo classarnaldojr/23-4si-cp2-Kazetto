@@ -8,6 +8,10 @@ hands = mp_hands.Hands(static_image_mode=False, max_num_hands=2, min_detection_c
 # Mapear os nomes das jogadas para seus respectivos índices
 jogadas = {0: "Pedra", 1: "Papel", 2: "Tesoura",3:"Não Existe"}
 
+# Variáveis para armazenar as pontuações dos jogadores
+pontuacao_jogador1 = 0
+pontuacao_jogador2 = 0
+
 # Função para detectar as mãos no frame
 def detectar_maos(frame):
     frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
@@ -50,6 +54,7 @@ def determinar_vencedor(jogada1, jogada2):
         return "Jogador 1 venceu!"
     else:
         return "Jogador 2 venceu!"
+    
 
 # Abrir o vídeo
 #video = cv2.VideoCapture("pedra-papel-tesoura.mp4")
