@@ -20,14 +20,16 @@ def determinar_jogada(mao):
     pulso = landmarks[0]
     dedo_indicador = landmarks[8]
     dedo_medio = landmarks[12]
-    
+
     # Calcular a distância entre o polegar e os outros dedos
     distancia_polegar_indicador = ((pulso.x - dedo_indicador.x)**2 + (pulso.y - dedo_indicador.y)**2)**0.5
     distancia_polegar_medio = ((pulso.x - dedo_medio.x)**2 + (pulso.y - dedo_medio.y)**2)**0.5   
+    
+    print("distancia_polegar_medio",distancia_polegar_medio)
+    dedo_indicador = landmarks[8]
+    dedo_medio = landmarks[12]
     distancia_tesoura = ((dedo_medio.x - dedo_indicador.x)**2 + (dedo_medio.y - dedo_indicador.y)**2)**0.5
     
-    # Printar a distancia de cada dedo - Tesoura 
-    print("distancia_polegar_medio",distancia_polegar_medio)
     print("distancia_tesoura",distancia_tesoura)
     
     # Determinar a jogada com base nas distâncias
